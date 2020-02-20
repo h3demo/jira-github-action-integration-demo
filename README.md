@@ -1,10 +1,10 @@
-# test-jira-github-actions-demo
+# jira-github-action-integration-demo
 
 This demo has been made to showcase how to integrate CI/CD dev metrics(build/deploy) between a Github Workflow and Jira Cloud with three Github Actions:
 
-- [Jira Extract Issue Keys](https://github.com/nicolaH3/test-jira-github-actions-demo/blob/feature/JCU-45/README.md#jira-extract-issue-keys)
-- [Jira Upload Build Info](https://github.com/nicolaH3/test-jira-github-actions-demo/blob/feature/JCU-45/README.md#jira-upload-build-info)
-- [Jira Upload Deployment Info](https://github.com/nicolaH3/test-jira-github-actions-demo/blob/feature/JCU-45/README.md#jira-upload-deployment-info)
+- [Jira Extract Issue Keys](https://github.com/h3demo/jira-github-action-integration-demo#jira-extract-issue-keys)
+- [Jira Upload Build Info](https://github.com/h3demo/jira-github-action-integration-demo#jira-upload-build-info)
+- [Jira Upload Deployment Info](https://github.com/h3demo/jira-github-action-integration-demo#jira-upload-deployment-info)
 
 To summarize the actions taken in this demo pipeline, Jira Extract Issue Keys extracts the values in GitHub commits that correspond to a project issue key, example: A-1, PROJECT-2, PROJECT-3. If the project is building and has a key in the commit message, then its build informaiton is sent to any matching project issue keys that exist in a linked Jira Cloud via Jira Upload Build Info. If the project is deploying and has a key in the commit message, then its deployment information is sent to any matching project issue keys that exist in a connected Jira Cloud via Jira Upload Deployment Info. 
 
@@ -14,9 +14,9 @@ For Jira Extract Issue Keys, you must be able to use push and/or pull requests i
 
 For Jira Upload Build Info and Jira Upload Deployment Info, you must have the `GitHub for Jira` app installed on the Jira Cloud instance you plan to use, the `Jira Software + GitHub` installed on your GitHub account, and have your GitHub account connected to the Jira Cloud instance.
 
-Jira Upload Build Info and Jira Upload Deployment Info also require OAuth credentails from Jira Cloud for the pipeline in order to send trusted information to and from GitHub and Jira Cloud. For more informaiton on how to set up OAuth credentials, please see Action Secrets in the [Jira Upload Build Info](https://github.com/HighwayThree/jira-upload-build-info/tree/feature/JCU-38#action-secrets) or [Jira Upload Deployment Info](https://github.com/HighwayThree/jira-upload-deployment-info/tree/feature/JCU-38#action-secrets)'s README files.
+Jira Upload Build Info and Jira Upload Deployment Info also require OAuth credentails from Jira Cloud for the pipeline in order to send trusted information to and from GitHub and Jira Cloud. For more informaiton on how to set up OAuth credentials, please see Action Secrets in the [Jira Upload Build Info](https://github.com/HighwayThree/jira-upload-build-info#action-secrets) or [Jira Upload Deployment Info](https://github.com/HighwayThree/jira-upload-deployment-info#action-secrets)'s README files.
 
-There should be at least two secrets in your GitHub account, one for the client ID and one for the client secret. For more details, please read the [Jira Upload Build Info](https://github.com/nicolaH3/test-jira-github-actions-demo/blob/feature/JCU-45/README.md#job-specific-variables-1) and [Jira Upload Deployment Info](https://github.com/nicolaH3/test-jira-github-actions-demo/blob/feature/JCU-45/README.md#job-specific-variables-2) job specific variables for examples of the required inputs.
+There should be at least two secrets in your GitHub account, one for the client ID and one for the client secret. For more details, please read the [Jira Upload Build Info](https://github.com/h3demo/jira-github-action-integration-demo#job-specific-variables-1) and [Jira Upload Deployment Info](https://github.com/h3demo/jira-github-action-integration-demo#job-specific-variables-2) job specific variables for examples of the required inputs.
 
 ## GitHub Actions
 
@@ -69,7 +69,7 @@ with:
 
 ###### Optional variables
 
-This pipeline demo does not contain any optional variables. Not manually setting optional values sets them to the default values seen in the code below. For more information about the optional variabes, please see [Jira Upload Build Info's Optional Values](https://github.com/HighwayThree/jira-upload-build-info/tree/feature/JCU-38#optional).
+This pipeline demo does not contain any optional variables. Not manually setting optional values sets them to the default values seen in the code below. For more information about the optional variabes, please see [Jira Upload Build Info's Optional Values](https://github.com/HighwayThree/jira-upload-build-info#optional).
 
 ```
 with:
@@ -129,7 +129,7 @@ with:
 
 ###### Optional variables
 
-This pipeline demo does not contain any optional variables. Not manually setting optional values sets them to the default values seen in the code below. For more information about the optional variabes, please see [Jira Upload Deployment Info's Optional Values](https://github.com/HighwayThree/jira-upload-deployment-info/tree/feature/JCU-38#optional).
+This pipeline demo does not contain any optional variables. Not manually setting optional values sets them to the default values seen in the code below. For more information about the optional variabes, please see [Jira Upload Deployment Info's Optional Values](https://github.com/HighwayThree/jira-upload-deployment-info#optional).
 
 ```
 with:
