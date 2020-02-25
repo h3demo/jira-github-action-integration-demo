@@ -40,9 +40,9 @@ with:
   parse-all-commits: ${{ github.event_name == 'push' }}
   commit-message: 'EXAMPLE-1 message'
 ```
-- `is-pull-request` - is true if the GitHub event is a pull request
-- `parse-all-commits` - is true if the GitHub event is a push
-- `commit-message` - commit message to be parsed for jira keys
+- `is-pull-request` - is true if the GitHub event is a pull request. Default is false.
+- `parse-all-commits` - is true if the GitHub event is a push. Default is false.
+- `commit-message` - commit message to be parsed for jira keys. Default is the user's commit message.
 
 ### [Jira Upload Build Info:](https://github.com/HighwayThree/jira-upload-build-info)
 
