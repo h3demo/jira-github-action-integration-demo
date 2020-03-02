@@ -29,7 +29,7 @@ jobs:
     - name: Parse Jira Keys from Commit
       id: jira_keys
       if: always()
-      uses: HighwayThree/jira-extract-issue-keys@master
+      uses: HighwayThree/jira-extract-issue-keys@v0.2-alpha
       with:
         is-pull-request: ${{ github.event_name == 'pull_request' }}
         parse-all-commits: ${{ github.event_name == 'push' }}
@@ -38,7 +38,7 @@ jobs:
     - name: Push Build Info to Jira
       if: steps.jira_keys.outputs.jira-keys != ''
       id: push_build_info_to_jira
-      uses: HighwayThree/jira-upload-build-info@master
+      uses: HighwayThree/jira-upload-build-info@v0.1-alpha
       with:
         client-id: '${{ secrets.CLIENT_ID }}'
         client-secret: '${{ secrets.CLIENT_SECRET }}'
@@ -65,7 +65,7 @@ jobs:
       - name: Parse Jira Keys from All Commits
         id: jira_keys
         if: always()
-        uses: HighwayThree/jira-extract-issue-keys@master
+        uses: HighwayThree/jira-extract-issue-keys@v0.2-alpha
         with:
           is-pull-request: ${{ github.event_name == 'pull_request' }}
           parse-all-commits: ${{ github.event_name == 'push' }}
@@ -79,7 +79,7 @@ jobs:
       - name: Push Deployment Info to Jira
         if: steps.jira_keys.outputs.jira-keys != ''
         id: push_deployment_info_to_jira
-        uses: HighwayThree/jira-upload-deployment-info@master
+        uses: HighwayThree/jira-upload-deployment-info@v0.1-alpha
         with:
           client-id: '${{ secrets.CLIENT_ID }}'
           client-secret: '${{ secrets.CLIENT_SECRET }}'
@@ -114,7 +114,7 @@ jobs:
       - name: Parse Jira Keys from All Commits
         id: jira_keys
         if: always()
-        uses: HighwayThree/jira-extract-issue-keys@master
+        uses: HighwayThree/jira-extract-issue-keys@v0.2-alpha
         with:
           is-pull-request: ${{ github.event_name == 'pull_request' }}
           parse-all-commits: ${{ github.event_name == 'push' }}
@@ -128,7 +128,7 @@ jobs:
       - name: Push Deployment Info to Jira
         if: steps.jira_keys.outputs.jira-keys != ''
         id: push_deployment_info_to_jira
-        uses: HighwayThree/jira-upload-deployment-info@master
+        uses: HighwayThree/jira-upload-deployment-info@v0.1-alpha
         with:
           client-id: '${{ secrets.CLIENT_ID }}'
           client-secret: '${{ secrets.CLIENT_SECRET }}'
