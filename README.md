@@ -1,4 +1,4 @@
-# jira-github-action-integration-demo
+# jira-github-action-integration-demo 
 
 This demo has been made to showcase how to integrate CI/CD dev metrics(build/deploy) between a Github Workflow and Jira Cloud with three Github Actions:
 
